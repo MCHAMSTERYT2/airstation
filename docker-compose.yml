@@ -8,11 +8,8 @@ services:
     ports:
       - "7331:7331"
     volumes:
-      - database:/app/storage
-      - ./static:/app/static
+      - /mnt/md0/airstation/airstation-data:/app/storage
+      - /mnt/md0/airstation/static:/app/static
     restart: unless-stopped
     env_file:
-      - .env
-    
-volumes:
-  database:
+      - stack.env
